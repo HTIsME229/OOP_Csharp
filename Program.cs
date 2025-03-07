@@ -56,3 +56,17 @@ public class PartTimeEmployee : Employee
         return GetPaymentPerHour() * workingHours;
     }
 }
+public class FullTimeEmployee : Employee
+{
+    private const int FullTimeHours = 40;
+
+    public FullTimeEmployee(string name, int paymentPerHour)
+        : base(name, paymentPerHour)
+    {
+    }
+
+    public override int CalculateSalary()
+    {
+        return GetPaymentPerHour() * FullTimeHours;
+    }
+}
