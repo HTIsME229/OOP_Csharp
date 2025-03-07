@@ -43,22 +43,22 @@ public class Employee : IEmployee
 
 public class PartTimeEmployee : Employee
 {
-    private int workingHours;
+    private int workingHours_237;
 
     public PartTimeEmployee(string name, int paymentPerHour, int workingHours)
         : base(name, paymentPerHour)
     {
-        this.workingHours = workingHours;
+        this.workingHours_237 = workingHours;
     }
 
     public override int CalculateSalary()
     {
-        return GetPaymentPerHour() * workingHours;
+        return GetPaymentPerHour() * workingHours_237;
     }
 }
 public class FullTimeEmployee : Employee
 {
-    private const int FullTimeHours = 40;
+    private const int FullTimeHours_237 = 40;
 
     public FullTimeEmployee(string name, int paymentPerHour)
         : base(name, paymentPerHour)
@@ -67,6 +67,17 @@ public class FullTimeEmployee : Employee
 
     public override int CalculateSalary()
     {
-        return GetPaymentPerHour() * FullTimeHours;
+        return GetPaymentPerHour() * FullTimeHours_237;
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        PartTimeEmployee partTimeEmp_237 = new PartTimeEmployee("Alice", 20, 25);
+        FullTimeEmployee fullTimeEmp_237 = new FullTimeEmployee("Bob", 30);
+
+        Console.WriteLine($"{partTimeEmp_237.GetName()} - Lương: {partTimeEmp_237.CalculateSalary()}");
+        Console.WriteLine($"{fullTimeEmp_237.GetName()} - Lương: {fullTimeEmp_237.CalculateSalary()}");
     }
 }
